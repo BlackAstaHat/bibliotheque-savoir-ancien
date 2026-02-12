@@ -184,6 +184,24 @@ function createSymbol() {
 }
 
 setInterval(createSymbol, 400);
+</script><script>
+window.addEventListener("DOMContentLoaded", () => {
+  const symbols = ["𓂀","𓆣","𓃀","𓁐","𓄿","𓊪","𓆑","𓅓","𓈖"];
+  const egyptDiv = document.getElementById("egypt");
+
+  function createSymbol() {
+    const span = document.createElement("span");
+    span.className = "hiero";
+    span.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.animationDuration = (5 + Math.random() * 5) + "s";
+    span.style.fontSize = (24 + Math.random() * 20) + "px";
+    egyptDiv.appendChild(span);
+    setTimeout(() => span.remove(), 10000);
+  }
+
+  setInterval(createSymbol, 400);
+});
 </script>
 </body><div class="egypt-animation" id="egypt"></div>
 </html>
