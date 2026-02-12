@@ -5,7 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Bibliothèque Du Savoir Ancien</title>
 
-<style>
+<style>/* === Hiéroglyphes dorés === */
+.egypt-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hiero {
+    position: absolute;
+    font-size: 28px;
+    color: gold;
+    opacity: 0.2;
+    text-shadow: 0 0 6px gold;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(110vh); }
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -145,6 +169,21 @@ TikTok
 </div>
 
 </div>
+<script>
+const symbols = ["𓂀","𓆣","𓃀","𓁐","𓄿","𓊪","𓆑","𓅓","𓈖"];
+const egyptDiv = document.getElementById("egypt");
 
-</body>
+function createSymbol() {
+    const span = document.createElement("span");
+    span.className = "hiero";
+    span.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.animationDuration = (5 + Math.random() * 5) + "s";
+    egyptDiv.appendChild(span);
+    setTimeout(() => span.remove(), 10000);
+}
+
+setInterval(createSymbol, 400);
+</script>
+</body><div class="egypt-animation" id="egypt"></div>
 </html>
