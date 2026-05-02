@@ -7,7 +7,9 @@
 
 <style>
 
-/* ===== HIEROGLYPHES ===== */
+/* =========================
+   🌌 HIEROGLYPHES
+========================= */
 .egypt-animation {
     position: fixed;
     top: 0;
@@ -32,7 +34,9 @@
     to { transform: translateY(110vh); }
 }
 
-/* ===== PARTICULES ===== */
+/* =========================
+   🌠 PARTICULES
+========================= */
 .particle {
     position: fixed;
     width: 3px;
@@ -50,7 +54,9 @@
     to { transform: translateY(-10vh); opacity: 1; }
 }
 
-/* ===== BASE ===== */
+/* =========================
+   🌍 BASE
+========================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -58,9 +64,9 @@ body {
     background-size: cover;
     color: white;
     text-align: center;
+    scroll-behavior: smooth;
 }
 
-/* ===== OVERLAY ===== */
 .overlay {
     background: rgba(0, 0, 0, 0.88);
     min-height: 100vh;
@@ -69,7 +75,9 @@ body {
     z-index: 2;
 }
 
-/* ===== TITRES ===== */
+/* =========================
+   ✨ TITRES
+========================= */
 h1 {
     font-size: 42px;
     color: gold;
@@ -80,7 +88,9 @@ h2 {
     color: gold;
 }
 
-/* ===== BOUTONS ===== */
+/* =========================
+   🔘 BOUTONS
+========================= */
 .button {
     display: inline-block;
     margin: 10px;
@@ -95,11 +105,13 @@ h2 {
 }
 
 .button:hover {
-    background: orange;
     transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
-/* ===== LIVRES ===== */
+/* =========================
+   📚 LIVRES
+========================= */
 .books {
     display: flex;
     flex-wrap: wrap;
@@ -112,8 +124,8 @@ h2 {
     padding: 20px;
     border-radius: 15px;
     width: 300px;
-    transition: 0.3s;
     text-align: left;
+    transition: 0.3s;
 }
 
 .book:hover {
@@ -126,7 +138,9 @@ h2 {
     border-radius: 10px;
 }
 
-/* ===== EXTRATS PARCHEMIN ===== */
+/* =========================
+   📜 EXTRATS
+========================= */
 .extract {
     font-size: 14px;
     opacity: 0.9;
@@ -136,35 +150,25 @@ h2 {
     padding: 12px;
     background: rgba(255, 248, 220, 0.06);
     border-radius: 8px;
-    position: relative;
-    overflow: hidden;
 }
 
-/* effet lumière ancien */
-.extract::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top, rgba(255,215,0,0.15), transparent);
-    pointer-events: none;
-}
-
-/* effet machine à écrire */
-.typewriter {
-    display: inline-block;
-    border-right: 2px solid gold;
-    white-space: pre-wrap;
-}
-
-/* ===== SECTIONS ===== */
+/* =========================
+   📌 SECTIONS
+========================= */
 .section {
     margin-top: 70px;
 }
 
-/* ===== MODE LECTURE ===== */
+/* =========================
+   📖 NAVIGATION
+========================= */
+.nav {
+    margin-bottom: 30px;
+}
+
+/* =========================
+   📜 READER MODE
+========================= */
 .reading-mode {
     position: fixed;
     top: 0;
@@ -188,29 +192,50 @@ h2 {
 <!-- HIEROGLYPHES -->
 <div class="egypt-animation" id="egypt"></div>
 
-<!-- PARTICULES -->
+<!-- PARTICULE / READER -->
 <div id="reader" class="reading-mode"></div>
 
 <div class="overlay">
 
-<h1>📜 Bibliothèque du Savoir Ancien</h1>
-<p>Fragments des connaissances oubliées</p>
+<!-- ================= NAV ================= -->
+<div class="nav">
+  <a class="button" href="#video">🎬 Vidéo</a>
+  <a class="button" href="#ouvrages">📖 Ouvrages</a>
+  <a class="button" href="#extraits">📜 Extraits</a>
+  <a class="button" href="#social">🌐 Réseaux</a>
+</div>
 
-<!-- LIVRES -->
-<div class="section">
-<h2>📚 Ouvrages</h2>
+<!-- ================= HERO ================= -->
+<h1>📜 Bibliothèque du Savoir Ancien</h1>
+<p>Fragments des connaissances oubliées de l’humanité</p>
+
+<!-- ================= VIDEO ================= -->
+<div id="video" style="margin-top:30px;">
+  <iframe width="100%" height="500"
+    src="https://www.youtube.com/embed/z-pO4P6swqY"
+    frameborder="0" allowfullscreen style="max-width:1200px;">
+  </iframe>
+</div>
+
+<!-- ================= IMAGE ================= -->
+<div style="margin-top:40px;">
+  <img src="https://i.postimg.cc/D0BQrJhB/8DD712EB-7F67-437C-A29E-2704C4C6A3A1.png"
+       style="width:100%; max-width:1200px;">
+</div>
+
+<!-- ================= OUVRAGES ================= -->
+<div id="ouvrages" class="section">
+<h2>📖 Ouvrages</h2>
 
 <div class="books">
 
-<!-- ===== TOME 1 ===== -->
+<!-- TOME 1 -->
 <div class="book">
 <img src="https://i.postimg.cc/hGkCDsWj/8D049B7E-CB7E-4F61-9783-78CBD94631A5.png">
-
-<h3>Tome 1 — Origines oubliées</h3>
+<h3>Tome 1</h3>
 
 <div class="extract">
-Avant les civilisations connues, des intelligences façonnaient déjà les fondations invisibles du monde.  
-Des traces anciennes évoquent des architectes invisibles influençant les premières sociétés humaines.
+Avant les civilisations connues, des forces invisibles semblaient déjà influencer le développement de l’humanité.
 </div>
 
 <a class="button" href="https://www.dropbox.com/scl/fi/mo9mu6dtdsgb5qgunuvfc/Mon-E-Book-Voyage-Au-Plus-Profonds-Des-Secrets-De-L-univers-et-De-L-humanit.pdf?raw=1" target="_blank">
@@ -218,15 +243,13 @@ Télécharger
 </a>
 </div>
 
-<!-- ===== TOME 2 ===== -->
+<!-- TOME 2 -->
 <div class="book">
 <img src="https://i.postimg.cc/DzcMgDSy/1D3C591E-C912-4D8F-852E-EF7C91B921DA.png">
-
-<h3>Tome 2 — Sociétés secrètes</h3>
+<h3>Tome 2</h3>
 
 <div class="extract">
-Certaines organisations anciennes auraient conservé des fragments de savoirs oubliés transmis par symboles.  
-Ces structures auraient influencé la transmission des connaissances à travers les siècles.
+Les sociétés secrètes auraient conservé des fragments de savoir ancien sous forme de symboles et rituels.
 </div>
 
 <a class="button" href="https://www.dropbox.com/scl/fi/rjuszfveo07ubkda3ohm0/Voyage-Au-Plus-Profond-Des-Myst-res-De-L-univers-Et-De-L-humanit-Tome-2.pdf?raw=1" target="_blank">
@@ -234,15 +257,13 @@ Télécharger
 </a>
 </div>
 
-<!-- ===== TOME 3 ===== -->
+<!-- TOME 3 -->
 <div class="book">
 <img src="https://i.postimg.cc/zGztf7tY/7A631E39-2C4B-4611-A008-B3E14EEBB5A5.png">
-
-<h3>Tome 3 — Connaissances avancées</h3>
+<h3>Tome 3</h3>
 
 <div class="extract">
-Le symbolisme de Saturne traverse de nombreuses civilisations anciennes.  
-Il représente les cycles, le temps et les structures profondes de la réalité.
+Le symbolisme de Saturne représente les cycles et structures profondes de la réalité dans de nombreuses traditions anciennes.
 </div>
 
 <a class="button" href="https://www.dropbox.com/scl/fi/fn9ahed5vzb78cvuydk6p/tome-3-complet.pdf?raw=1" target="_blank">
@@ -253,15 +274,38 @@ Télécharger
 </div>
 </div>
 
+<!-- ================= EXTRATS ================= -->
+<div id="extraits" class="section">
+<h2>📜 Extraits</h2>
+
+<div style="max-width:800px;margin:auto;text-align:left;">
+
+<p class="extract">Des traces anciennes suggèrent l’existence d’une connaissance pré-civilisationnelle oubliée.</p>
+
+<p class="extract">Les symboles retrouvés dans différentes cultures pourraient provenir d’une source commune.</p>
+
+<p class="extract">Certaines structures invisibles influenceraient les cycles des civilisations humaines.</p>
+
+</div>
+</div>
+
+<!-- ================= SOCIAL ================= -->
+<div id="social" class="section">
+<h2>🌐 Réseaux</h2>
+
+<a class="button" href="https://youtube.com/@letheoricienantique">YouTube</a>
+<a class="button" href="https://www.tiktok.com/@letheoricienantique4.0">TikTok</a>
+</div>
+
 </div>
 
 <script>
 
-/* ===== HIEROGLYPHES ===== */
+/* HIEROGLYPHES */
 const symbols = ["𓂀","𓆣","𓃀","𓁐","𓄿","𓊪"];
 const egypt = document.getElementById("egypt");
 
-function createSymbol() {
+function createSymbol(){
     const s = document.createElement("span");
     s.className = "hiero";
     s.innerText = symbols[Math.floor(Math.random()*symbols.length)];
@@ -273,8 +317,8 @@ function createSymbol() {
 }
 setInterval(createSymbol,400);
 
-/* ===== PARTICULES ===== */
-function createParticle() {
+/* PARTICULES */
+function createParticle(){
     const p = document.createElement("div");
     p.className = "particle";
     p.style.left = Math.random()*100+"vw";
@@ -283,31 +327,6 @@ function createParticle() {
     setTimeout(()=>p.remove(),12000);
 }
 setInterval(createParticle,200);
-
-/* ===== TYPEWRITER SUR EXTRATS ===== */
-function typeWriter(el, speed=15){
-    const text = el.innerText;
-    el.innerText = "";
-    let i = 0;
-
-    function write(){
-        if(i < text.length){
-            el.innerText += text.charAt(i);
-            i++;
-            setTimeout(write, speed);
-        } else {
-            el.style.borderRight = "none";
-        }
-    }
-    write();
-}
-
-window.addEventListener("load", () => {
-    document.querySelectorAll(".extract").forEach(el => {
-        el.classList.add("typewriter");
-        typeWriter(el);
-    });
-});
 
 </script>
 
