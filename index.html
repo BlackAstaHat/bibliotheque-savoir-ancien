@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Bibliothèque Du Savoir Ancien</title>
 
-<style>/* === Hiéroglyphes dorés === */
+<style>
+
+/* ===== ANIMATION HIEROGLYPHES ===== */
 .egypt-animation {
     position: fixed;
     top: 0;
@@ -19,10 +21,9 @@
 
 .hiero {
     position: absolute;
-    font-size: 28px;
     color: gold;
     opacity: 0.2;
-    text-shadow: 0 0 6px gold;
+    text-shadow: 0 0 8px gold;
     animation: fall linear infinite;
 }
 
@@ -30,6 +31,8 @@
     from { transform: translateY(-50px); }
     to { transform: translateY(110vh); }
 }
+
+/* ===== BASE ===== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -39,23 +42,50 @@ body {
     text-align: center;
 }
 
+/* ===== OVERLAY ===== */
 .overlay {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.88);
     min-height: 100vh;
     padding: 40px 20px;
 }
 
+/* ===== TITRES ===== */
 h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 42px;
+    color: gold;
+    text-shadow: 0 0 20px gold;
 }
 
-.presentation {
+h2 {
+    color: gold;
+}
+
+/* ===== HERO ===== */
+.hero p {
     max-width: 800px;
-    margin: 0 auto 40px auto;
+    margin: auto;
     font-size: 18px;
 }
 
+/* ===== BOUTONS ===== */
+.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background: gold;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: orange;
+    transform: scale(1.05);
+}
+
+/* ===== LIVRES ===== */
 .books {
     display: flex;
     flex-wrap: wrap;
@@ -68,6 +98,12 @@ h1 {
     padding: 20px;
     border-radius: 15px;
     width: 280px;
+    transition: 0.3s;
+}
+
+.book:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px gold;
 }
 
 .book img {
@@ -75,25 +111,7 @@ h1 {
     border-radius: 10px;
 }
 
-.button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: gold;
-    color: black;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-.button:hover {
-    background: orange;
-}
-
-.social {
-    margin-top: 50px;
-}
-
+/* ===== SOCIAL ===== */
 .social a {
     display: inline-block;
     margin: 10px;
@@ -104,87 +122,114 @@ h1 {
     border-radius: 8px;
 }
 
+/* ===== SECTION ===== */
 .section {
-    margin-top: 60px;
+    margin-top: 70px;
 }
+
 </style>
 </head>
 
-<body><!-- VIDEO PRESENTATION -->
-<div style="width:100%; text-align:center; margin-top:30px;">
-  <iframe 
-    width="100%" 
-    height="600" 
+<body>
+
+<!-- ANIMATION -->
+<div class="egypt-animation" id="egypt"></div>
+
+<!-- VIDEO -->
+<div style="margin-top:30px;">
+  <iframe width="100%" height="600"
     src="https://www.youtube.com/embed/z-pO4P6swqY"
-    frameborder="0"
-    allowfullscreen
-    style="max-width:1200px;">
+    frameborder="0" allowfullscreen style="max-width:1200px;">
   </iframe>
-</div><!-- IMAGE AJOUTEE -->
-<div style="width:100%; text-align:center; margin-top:40px;">
-  <img 
-    src="https://i.postimg.cc/D0BQrJhB/8DD712EB-7F67-437C-A29E-2704C4C6A3A1.png"
-    alt="Le Théoricien Antique"
-    style="width:100%; max-width:1200px; height:auto;">
+</div>
+
+<!-- IMAGE -->
+<div style="margin-top:40px;">
+  <img src="https://i.postimg.cc/D0BQrJhB/8DD712EB-7F67-437C-A29E-2704C4C6A3A1.png"
+       style="width:100%; max-width:1200px;">
 </div>
 
 <div class="overlay">
 
-<h1>La Bibliothèque Du Savoir Ancien</h1>
+<!-- HERO -->
+<div class="hero">
+  <h1>📜 Bibliothèque du Savoir Ancien</h1>
+  <p>
+    Accède aux connaissances interdites. Civilisations disparues,
+    sociétés secrètes et vérités cachées de l’humanité.
+  </p>
 
-<div class="presentation">
-Salut moi c’est <strong>Le Théoricien Antique</strong>.  
-Ici tu retrouveras mes 3 ouvrages disponibles gratuitement.  
-Voyage au plus profond des mystères de l’univers et de l’humanité.  
-N’hésite pas à laisser un avis et à me soutenir sur mes réseaux.
+  <a href="#livres" class="button">📖 Lire les ouvrages</a>
+  <a href="#concept" class="button">🧠 Comprendre</a>
 </div>
 
-<div class="books">
-
-<div class="book">
-<img src="https://i.postimg.cc/hGkCDsWj/8D049B7E-CB7E-4F61-9783-78CBD94631A5.png">
-<h3>Tome 1</h3>
-<a class="button" href="https://www.dropbox.com/scl/fi/mo9mu6dtdsgb5qgunuvfc/Mon-E-Book-Voyage-Au-Plus-Profonds-Des-Secrets-De-L-univers-et-De-L-humanit.pdf?raw=1" target="_blank">
-Télécharger
-</a>
-</div>
-
-<div class="book">
-<img src="https://i.postimg.cc/DzcMgDSy/1D3C591E-C912-4D8F-852E-EF7C91B921DA.png">
-<h3>Tome 2</h3>
-<a class="button" href="https://www.dropbox.com/scl/fi/rjuszfveo07ubkda3ohm0/Voyage-Au-Plus-Profond-Des-Myst-res-De-L-univers-Et-De-L-humanit-Tome-2.pdf?raw=1" target="_blank">
-Télécharger
-</a>
-</div>
-
-<div class="book">
-<img src="https://i.postimg.cc/zGztf7tY/7A631E39-2C4B-4611-A008-B3E14EEBB5A5.png">
-<h3>Tome 3</h3>
-<a class="button" href="https://www.dropbox.com/scl/fi/fn9ahed5vzb78cvuydk6p/tome-3-complet.pdf?raw=1" target="_blank">
-Télécharger
-</a>
-</div>
-
-</div>
-
-<div class="social">
-<h2>Mes Réseaux</h2>
-
-<a href="https://youtube.com/@letheoricienantique?si=o5g-DPei2R6XdJ7E" target="_blank">
-YouTube
-</a>
-
-<a href="https://www.tiktok.com/@letheoricienantique4.0" target="_blank">
-TikTok
-</a>
-</div>
-
+<!-- PRESENTATION -->
 <div class="section">
-<h2>Questions & Avis</h2>
-<p>Tu peux me laisser ton avis ou me poser des questions directement sur mes réseaux.</p>
+  <p style="max-width:800px; margin:auto;">
+    Salut moi c’est <strong>Le Théoricien Antique</strong>.  
+    Ici tu retrouveras mes ouvrages gratuitement.
+    Voyage au cœur des mystères de l’univers et de l’humanité.
+  </p>
 </div>
 
+<!-- CONCEPT -->
+<div id="concept" class="section">
+  <h2>🧠 Concept</h2>
+  <p style="max-width:800px; margin:auto;">
+    Une archive numérique regroupant les savoirs oubliés :
+    Atlantide, Égypte, sociétés secrètes et influences galactiques.
+  </p>
 </div>
+
+<!-- LIVRES -->
+<div id="livres" class="section">
+  <h2>📚 Ouvrages</h2>
+
+  <div class="books">
+
+    <div class="book">
+      <img src="https://i.postimg.cc/hGkCDsWj/8D049B7E-CB7E-4F61-9783-78CBD94631A5.png">
+      <h3>Tome 1</h3>
+      <a class="button" href="https://www.dropbox.com/scl/fi/mo9mu6dtdsgb5qgunuvfc/Mon-E-Book-Voyage-Au-Plus-Profonds-Des-Secrets-De-L-univers-et-De-L-humanit.pdf?raw=1" target="_blank">
+        Télécharger
+      </a>
+    </div>
+
+    <div class="book">
+      <img src="https://i.postimg.cc/DzcMgDSy/1D3C591E-C912-4D8F-852E-EF7C91B921DA.png">
+      <h3>Tome 2</h3>
+      <a class="button" href="https://www.dropbox.com/scl/fi/rjuszfveo07ubkda3ohm0/Voyage-Au-Plus-Profond-Des-Myst-res-De-L-univers-Et-De-L-humanit-Tome-2.pdf?raw=1" target="_blank">
+        Télécharger
+      </a>
+    </div>
+
+    <div class="book">
+      <img src="https://i.postimg.cc/zGztf7tY/7A631E39-2C4B-4611-A008-B3E14EEBB5A5.png">
+      <h3>Tome 3</h3>
+      <a class="button" href="https://www.dropbox.com/scl/fi/fn9ahed5vzb78cvuydk6p/tome-3-complet.pdf?raw=1" target="_blank">
+        Télécharger
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- SOCIAL -->
+<div class="section social">
+  <h2>🌐 Réseaux</h2>
+
+  <a href="https://youtube.com/@letheoricienantique" target="_blank">YouTube</a>
+  <a href="https://www.tiktok.com/@letheoricienantique4.0" target="_blank">TikTok</a>
+</div>
+
+<!-- WARNING -->
+<p style="margin-top:60px; color:red; font-weight:bold;">
+⚠️ Certaines informations peuvent être supprimées. Partage tant qu’elles sont accessibles.
+</p>
+
+</div>
+
+<!-- SCRIPT -->
 <script>
 const symbols = ["𓂀","𓆣","𓃀","𓁐","𓄿","𓊪","𓆑","𓅓","𓈖"];
 const egyptDiv = document.getElementById("egypt");
@@ -195,29 +240,13 @@ function createSymbol() {
     span.innerText = symbols[Math.floor(Math.random() * symbols.length)];
     span.style.left = Math.random() * 100 + "vw";
     span.style.animationDuration = (5 + Math.random() * 5) + "s";
+    span.style.fontSize = (24 + Math.random() * 20) + "px";
     egyptDiv.appendChild(span);
     setTimeout(() => span.remove(), 10000);
 }
 
 setInterval(createSymbol, 400);
-</script><script>
-window.addEventListener("DOMContentLoaded", () => {
-  const symbols = ["𓂀","𓆣","𓃀","𓁐","𓄿","𓊪","𓆑","𓅓","𓈖"];
-  const egyptDiv = document.getElementById("egypt");
-
-  function createSymbol() {
-    const span = document.createElement("span");
-    span.className = "hiero";
-    span.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-    span.style.left = Math.random() * 100 + "vw";
-    span.style.animationDuration = (5 + Math.random() * 5) + "s";
-    span.style.fontSize = (24 + Math.random() * 20) + "px";
-    egyptDiv.appendChild(span);
-    setTimeout(() => span.remove(), 10000);
-  }
-
-  setInterval(createSymbol, 400);
-});
 </script>
-</body><div class="egypt-animation" id="egypt"></div>
+
+</body>
 </html>
