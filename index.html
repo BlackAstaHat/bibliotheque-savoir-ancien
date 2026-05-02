@@ -8,7 +8,7 @@
 <style>
 
 /* =========================
-   🌌 HIEROGLYPHES
+   🌌 FOND HIÉROGLYPHES
 ========================= */
 .egypt-animation {
     position: fixed;
@@ -139,7 +139,7 @@ h2 {
 }
 
 /* =========================
-   📜 EXTRATS
+   📜 PARCHEMIN EXTRATS
 ========================= */
 .extract {
     font-size: 14px;
@@ -153,35 +153,51 @@ h2 {
 }
 
 /* =========================
-   📌 SECTIONS
-========================= */
-.section {
-    margin-top: 70px;
-}
-
-/* =========================
-   📖 NAVIGATION
+   📖 NAV
 ========================= */
 .nav {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 /* =========================
-   📜 READER MODE
+   📖 PRESENTATION
 ========================= */
-.reading-mode {
+.presentation {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* =========================
+   📖 LIVRE QUI S’OUVRE
+========================= */
+.book-open {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.97);
-    color: #f5e6c8;
-    padding: 40px;
-    overflow-y: auto;
-    z-index: 9999;
     display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.book-content {
+    background: #111;
+    border: 2px solid gold;
+    padding: 30px;
+    max-width: 700px;
+    color: #f5e6c8;
     text-align: left;
+    animation: openBook 0.8s ease;
+}
+
+@keyframes openBook {
+    from { transform: scale(0.5) rotateY(20deg); opacity: 0; }
+    to { transform: scale(1) rotateY(0); opacity: 1; }
 }
 
 </style>
@@ -189,11 +205,13 @@ h2 {
 
 <body>
 
-<!-- HIEROGLYPHES -->
+<!-- HIÉROGLYPHES -->
 <div class="egypt-animation" id="egypt"></div>
 
-<!-- PARTICULE / READER -->
-<div id="reader" class="reading-mode"></div>
+<!-- LIVRE OVERLAY -->
+<div class="book-open" id="book">
+  <div class="book-content" id="bookContent"></div>
+</div>
 
 <div class="overlay">
 
@@ -205,9 +223,14 @@ h2 {
   <a class="button" href="#social">🌐 Réseaux</a>
 </div>
 
-<!-- ================= HERO ================= -->
+<!-- ================= TITRE ================= -->
 <h1>📜 Bibliothèque du Savoir Ancien</h1>
-<p>Fragments des connaissances oubliées de l’humanité</p>
+
+<!-- ================= PRESENTATION ================= -->
+<div class="presentation">
+<p><strong>Salut, moi c’est Le Théoricien Antique.</strong></p>
+<p>Ici tu accèdes à une bibliothèque numérique regroupant les fragments des connaissances oubliées de l’humanité : civilisations anciennes, sociétés secrètes et symbolisme universel.</p>
+</div>
 
 <!-- ================= VIDEO ================= -->
 <div id="video" style="margin-top:30px;">
@@ -229,46 +252,47 @@ h2 {
 
 <div class="books">
 
-<!-- TOME 1 -->
 <div class="book">
 <img src="https://i.postimg.cc/hGkCDsWj/8D049B7E-CB7E-4F61-9783-78CBD94631A5.png">
 <h3>Tome 1</h3>
 
 <div class="extract">
-Avant les civilisations connues, des forces invisibles semblaient déjà influencer le développement de l’humanité.
+Avant les civilisations connues, des intelligences semblaient déjà influencer le développement humain.
 </div>
 
-<a class="button" href="https://www.dropbox.com/scl/fi/mo9mu6dtdsgb5qgunuvfc/Mon-E-Book-Voyage-Au-Plus-Profonds-Des-Secrets-De-L-univers-et-De-L-humanit.pdf?raw=1" target="_blank">
-Télécharger
-</a>
+<button class="button" onclick="openBook(`
+<h2>Tome 1 — Extrait</h2>
+<p>Avant les civilisations connues, certaines forces invisibles semblaient structurer le monde.</p>
+`)">Lire extrait</button>
+
+<a class="button" href="https://www.dropbox.com/scl/fi/mo9mu6dtdsgb5qgunuvfc/Mon-E-Book-Voyage-Au-Plus-Profonds-Des-Secrets-De-L-univers-et-De-L-humanit.pdf?raw=1">Télécharger</a>
 </div>
 
-<!-- TOME 2 -->
 <div class="book">
 <img src="https://i.postimg.cc/DzcMgDSy/1D3C591E-C912-4D8F-852E-EF7C91B921DA.png">
 <h3>Tome 2</h3>
 
 <div class="extract">
-Les sociétés secrètes auraient conservé des fragments de savoir ancien sous forme de symboles et rituels.
+Les sociétés secrètes auraient conservé des fragments de savoir ancien sous forme symbolique.
 </div>
 
-<a class="button" href="https://www.dropbox.com/scl/fi/rjuszfveo07ubkda3ohm0/Voyage-Au-Plus-Profond-Des-Myst-res-De-L-univers-Et-De-L-humanit-Tome-2.pdf?raw=1" target="_blank">
-Télécharger
-</a>
+<button class="button" onclick="openBook(`
+<h2>Tome 2 — Extrait</h2>
+<p>Les traditions anciennes auraient transmis leurs connaissances sous forme de symboles cachés.</p>
+`)">Lire extrait</button>
+
+<a class="button" href="https://www.dropbox.com/scl/fi/rjuszfveo07ubkda3ohm0/Voyage-Au-Plus-Profond-Des-Myst-res-De-L-univers-Et-De-L-humanit-Tome-2.pdf?raw=1">Télécharger</a>
 </div>
 
-<!-- TOME 3 -->
 <div class="book">
 <img src="https://i.postimg.cc/zGztf7tY/7A631E39-2C4B-4611-A008-B3E14EEBB5A5.png">
 <h3>Tome 3</h3>
 
 <div class="extract">
-Le symbolisme de Saturne représente les cycles et structures profondes de la réalité dans de nombreuses traditions anciennes.
+Le symbolisme de Saturne représente les cycles fondamentaux de la réalité.
 </div>
 
-<a class="button" href="https://www.dropbox.com/scl/fi/fn9ahed5vzb78cvuydk6p/tome-3-complet.pdf?raw=1" target="_blank">
-Télécharger
-</a>
+<a class="button" href="https://www.dropbox.com/scl/fi/fn9ahed5vzb78cvuydk6p/tome-3-complet.pdf?raw=1">Télécharger</a>
 </div>
 
 </div>
@@ -279,14 +303,11 @@ Télécharger
 <h2>📜 Extraits</h2>
 
 <div style="max-width:800px;margin:auto;text-align:left;">
-
-<p class="extract">Des traces anciennes suggèrent l’existence d’une connaissance pré-civilisationnelle oubliée.</p>
-
-<p class="extract">Les symboles retrouvés dans différentes cultures pourraient provenir d’une source commune.</p>
-
-<p class="extract">Certaines structures invisibles influenceraient les cycles des civilisations humaines.</p>
-
+<p class="extract">Des traces anciennes suggèrent une connaissance pré-civilisationnelle oubliée.</p>
+<p class="extract">Certains symboles semblent provenir d’une source commune universelle.</p>
+<p class="extract">Des structures invisibles influenceraient les cycles des civilisations.</p>
 </div>
+
 </div>
 
 <!-- ================= SOCIAL ================= -->
@@ -301,7 +322,7 @@ Télécharger
 
 <script>
 
-/* HIEROGLYPHES */
+/* HIÉROGLYPHES */
 const symbols = ["𓂀","𓆣","𓃀","𓁐","𓄿","𓊪"];
 const egypt = document.getElementById("egypt");
 
@@ -317,16 +338,15 @@ function createSymbol(){
 }
 setInterval(createSymbol,400);
 
-/* PARTICULES */
-function createParticle(){
-    const p = document.createElement("div");
-    p.className = "particle";
-    p.style.left = Math.random()*100+"vw";
-    p.style.animationDuration = (5+Math.random()*10)+"s";
-    document.body.appendChild(p);
-    setTimeout(()=>p.remove(),12000);
+/* LIVRE QUI S’OUVRE */
+function openBook(content){
+    document.getElementById("book").style.display = "flex";
+    document.getElementById("bookContent").innerHTML = content + `<br><br><button class='button' onclick='closeBook()'>Fermer</button>`;
 }
-setInterval(createParticle,200);
+
+function closeBook(){
+    document.getElementById("book").style.display = "none";
+}
 
 </script>
 
