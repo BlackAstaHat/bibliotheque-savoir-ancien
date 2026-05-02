@@ -7,7 +7,7 @@
 
 <style>
 
-/* ===== ANIMATION HIEROGLYPHES ===== */
+/* ===== HIEROGLYPHES ===== */
 .egypt-animation {
     position: fixed;
     top: 0;
@@ -32,24 +32,6 @@
     to { transform: translateY(110vh); }
 }
 
-/* ===== PARTICULES ===== */
-.particle {
-    position: fixed;
-    width: 3px;
-    height: 3px;
-    background: gold;
-    border-radius: 50%;
-    opacity: 0.4;
-    pointer-events: none;
-    animation: floatUp linear infinite;
-    z-index: 0;
-}
-
-@keyframes floatUp {
-    from { transform: translateY(100vh); opacity: 0; }
-    to { transform: translateY(-10vh); opacity: 1; }
-}
-
 /* ===== BASE ===== */
 body {
     margin: 0;
@@ -60,13 +42,10 @@ body {
     text-align: center;
 }
 
-/* ===== OVERLAY ===== */
 .overlay {
     background: rgba(0, 0, 0, 0.88);
     min-height: 100vh;
     padding: 40px 20px;
-    position: relative;
-    z-index: 2;
 }
 
 /* ===== TITRES ===== */
@@ -76,21 +55,8 @@ h1 {
     text-shadow: 0 0 20px gold;
 }
 
-h2, h3 {
+h2 {
     color: gold;
-    animation: glow 4s infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 10px gold; }
-    to { text-shadow: 0 0 25px gold; }
-}
-
-/* ===== HERO ===== */
-.hero p {
-    max-width: 800px;
-    margin: auto;
-    font-size: 18px;
 }
 
 /* ===== BOUTONS ===== */
@@ -124,12 +90,13 @@ h2, h3 {
     background: rgba(255,255,255,0.05);
     padding: 20px;
     border-radius: 15px;
-    width: 280px;
+    width: 300px;
     transition: 0.3s;
+    text-align: left;
 }
 
 .book:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     box-shadow: 0 0 20px gold;
 }
 
@@ -138,49 +105,19 @@ h2, h3 {
     border-radius: 10px;
 }
 
+/* ===== EXTRATS ===== */
+.extract {
+    font-size: 14px;
+    opacity: 0.85;
+    margin: 10px 0;
+    line-height: 1.5;
+    border-left: 2px solid gold;
+    padding-left: 10px;
+}
+
 /* ===== SECTIONS ===== */
 .section {
     margin-top: 70px;
-    animation: fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== MODE LECTURE ===== */
-.reading-mode {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.97);
-    color: #f5e6c8;
-    padding: 40px;
-    overflow-y: auto;
-    z-index: 9999;
-    display: none;
-    text-align: left;
-}
-
-/* ===== SOCIAL ===== */
-.social a {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    background: crimson;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-}
-
-/* ===== WARNING ===== */
-.warning {
-    margin-top: 60px;
-    color: red;
-    font-weight: bold;
 }
 
 </style>
@@ -191,12 +128,16 @@ h2, h3 {
 <!-- HIEROGLYPHES -->
 <div class="egypt-animation" id="egypt"></div>
 
-<!-- PARTICULES + READER -->
-<div id="reader" class="reading-mode"></div>
+<div class="overlay">
+
+<!-- HERO -->
+<h1>📜 Bibliothèque du Savoir Ancien</h1>
+
+<p>Fragments des connaissances oubliées de l’humanité</p>
 
 <!-- VIDEO -->
 <div style="margin-top:30px;">
-  <iframe width="100%" height="600"
+  <iframe width="100%" height="500"
     src="https://www.youtube.com/embed/z-pO4P6swqY"
     frameborder="0" allowfullscreen style="max-width:1200px;">
   </iframe>
@@ -208,70 +149,75 @@ h2, h3 {
        style="width:100%; max-width:1200px;">
 </div>
 
-<div class="overlay">
-
-<div class="hero">
-  <h1>📜 Bibliothèque du Savoir Ancien</h1>
-  <p>Accède aux connaissances interdites. Civilisations disparues et vérités cachées.</p>
-
-  <a class="button" href="#livres">📖 Lire les ouvrages</a>
-</div>
-
+<!-- LIVRES -->
 <div class="section">
-  <p style="max-width:800px;margin:auto;">
-    Salut moi c’est <strong>Le Théoricien Antique</strong>.  
-    Voyage au cœur des mystères de l’univers.
-  </p>
+<h2>📚 Ouvrages</h2>
+
+<div class="books">
+
+<!-- ===== TOME 1 ===== -->
+<div class="book">
+<img src="https://i.postimg.cc/hGkCDsWj/8D049B7E-CB7E-4F61-9783-78CBD94631A5.png">
+
+<h3>Tome 1 — Origines oubliées</h3>
+
+<div class="extract">
+Avant les civilisations connues, certaines forces semblaient déjà observer et structurer le développement de la conscience humaine.  
+Des fragments anciens évoquent des “architectes invisibles” ayant influencé les premières sociétés.
 </div>
 
-<div id="livres" class="section">
-  <h2>📚 Ouvrages</h2>
-
-  <div class="books">
-
-    <div class="book">
-      <img src="https://i.postimg.cc/hGkCDsWj/8D049B7E-CB7E-4F61-9783-78CBD94631A5.png">
-      <h3>Tome 1</h3>
-      <button class="button" onclick="openReader(`
-<h2>Tome 1 — Aperçu</h2>
-<p>Avant les civilisations connues, des intelligences façonnaient déjà les fondations invisibles du monde...</p>
-<p>Ce savoir traverse les âges sous forme de mythes oubliés.</p>
-`)">Lire extrait</button>
-    </div>
-
-    <div class="book">
-      <img src="https://i.postimg.cc/DzcMgDSy/1D3C591E-C912-4D8F-852E-EF7C91B921DA.png">
-      <h3>Tome 2</h3>
-      <button class="button" onclick="openReader(`
-<h2>Tome 2 — Aperçu</h2>
-<p>Les archives interdites ne sont jamais détruites, seulement cachées...</p>
-`)">Lire extrait</button>
-    </div>
-
-    <div class="book">
-      <img src="https://i.postimg.cc/zGztf7tY/7A631E39-2C4B-4611-A008-B3E14EEBB5A5.png">
-      <h3>Tome 3</h3>
-      <a class="button" href="https://www.dropbox.com/scl/fi/fn9ahed5vzb78cvuydk6p/tome-3-complet.pdf?raw=1">Télécharger</a>
-    </div>
-
-  </div>
+<a class="button" href="https://www.dropbox.com/scl/fi/mo9mu6dtdsgb5qgunuvfc/Mon-E-Book-Voyage-Au-Plus-Profonds-Des-Secrets-De-L-univers-et-De-L-humanit.pdf?raw=1" target="_blank">
+Télécharger le Tome 1
+</a>
 </div>
 
-<div class="section social">
-  <h2>🌐 Réseaux</h2>
-  <a href="https://youtube.com/@letheoricienantique">YouTube</a>
-  <a href="https://www.tiktok.com/@letheoricienantique4.0">TikTok</a>
+<!-- ===== TOME 2 ===== -->
+<div class="book">
+<img src="https://i.postimg.cc/DzcMgDSy/1D3C591E-C912-4D8F-852E-EF7C91B921DA.png">
+
+<h3>Tome 2 — Sociétés secrètes</h3>
+
+<div class="extract">
+Certaines organisations anciennes auraient conservé des fragments de savoirs oubliés, transmis sous forme de symboles.  
+La franc-maçonnerie serait l’une des formes modernes de ces traditions anciennes.
 </div>
 
-<p class="warning">
-⚠️ Certaines informations peuvent disparaître.
-</p>
+<a class="button" href="https://www.dropbox.com/scl/fi/rjuszfveo07ubkda3ohm0/Voyage-Au-Plus-Profond-Des-Myst-res-De-L-univers-Et-De-L-humanit-Tome-2.pdf?raw=1" target="_blank">
+Télécharger le Tome 2
+</a>
+</div>
+
+<!-- ===== TOME 3 ===== -->
+<div class="book">
+<img src="https://i.postimg.cc/zGztf7tY/7A631E39-2C4B-4611-A008-B3E14EEBB5A5.png">
+
+<h3>Tome 3 — Connaissances avancées</h3>
+
+<div class="extract">
+Le symbolisme de Saturne traverse de nombreuses civilisations anciennes.  
+Il représente le temps, les cycles et la structure même de la réalité dans certaines interprétations ésotériques.
+</div>
+
+<a class="button" href="https://www.dropbox.com/scl/fi/fn9ahed5vzb78cvuydk6p/tome-3-complet.pdf?raw=1" target="_blank">
+Télécharger le Tome 3
+</a>
+</div>
+
+</div>
+</div>
+
+<!-- SOCIAL -->
+<div class="section">
+<h2>🌐 Réseaux</h2>
+<a class="button" href="https://youtube.com/@letheoricienantique">YouTube</a>
+<a class="button" href="https://www.tiktok.com/@letheoricienantique4.0">TikTok</a>
+</div>
 
 </div>
 
 <script>
 
-/* ===== HIEROGLYPHES ===== */
+/* HIEROGLYPHES */
 const symbols = ["𓂀","𓆣","𓃀","𓁐","𓄿","𓊪"];
 const egypt = document.getElementById("egypt");
 
@@ -285,34 +231,8 @@ function createSymbol() {
     egypt.appendChild(s);
     setTimeout(()=>s.remove(),10000);
 }
+
 setInterval(createSymbol,400);
-
-/* ===== PARTICULES ===== */
-function createParticle() {
-    const p = document.createElement("div");
-    p.className = "particle";
-    p.style.left = Math.random()*100+"vw";
-    p.style.animationDuration = (5+Math.random()*10)+"s";
-    document.body.appendChild(p);
-    setTimeout(()=>p.remove(),12000);
-}
-setInterval(createParticle,200);
-
-/* ===== READER ===== */
-function openReader(content) {
-    const r = document.getElementById("reader");
-    r.innerHTML = `
-        <div style="max-width:800px;margin:auto;">
-            <button onclick="closeReader()" class="button">Fermer</button>
-            ${content}
-        </div>
-    `;
-    r.style.display = "block";
-}
-
-function closeReader() {
-    document.getElementById("reader").style.display = "none";
-}
 
 </script>
 
